@@ -8,4 +8,18 @@ function isTextCorrect() {
 	}
 }
 
-isTextCorrect()
+function itDisplaysNotes() {
+	note = {text: "something"};
+	noteListModel = new noteListModel();
+	noteListModel.addNote(note)
+	noteListModel.printList();
+	list = document.getElementById('noteList');
+	if (list.innerHTML === "<li>something</li>") {
+		console.log("it displays notes: true")
+	} else {
+		console.log("it displays notes: failed")
+	}
+}
+
+isTextCorrect();
+itDisplaysNotes();

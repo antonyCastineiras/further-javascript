@@ -7,3 +7,4 @@ function Note() {
 		return this.text;
 	};
 })(this);
+
