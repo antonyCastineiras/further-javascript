@@ -1,12 +1,12 @@
-function noteListModel () {
-
-	this.notes = [];
-
-}
-
 (function(exports) {
-	noteListModel.prototype.addNote = function(note) {
+	function NoteList () {
+		this.notes = [];
+	}
+
+	NoteList.prototype.addNote = function(note) {
 		this.notes.push(note);
 	};
+
+	exports.NoteList = NoteList;
 
 })(this);
