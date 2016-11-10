@@ -28,6 +28,19 @@ function itDisplaysASingleNote() {
 	}
 }
 
+function itAbbreviatesText() {
+	note = new Note("some text that is longer than 20 characters");
+	noteController.noteList.addNote(note);
+	noteController.displayNotes();
+	list = document.querySelector('#noteList li:nth-child(2)');
+	if (list.textContent.length === 20) {
+		console.log("it abbreviates text: passed")
+	} else {
+		throw new Error("it abbreviates text: failed")
+	}
+}
+
 isTextCorrect();
 itDisplaysNotes();
 itDisplaysASingleNote();
+itAbbreviatesText();
