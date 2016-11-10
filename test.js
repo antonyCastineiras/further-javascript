@@ -57,6 +57,15 @@ function notesHaveIds() {
 	}
 }
 
+function notesAreLinks() {
+	firstNote = document.querySelector('#noteList li a');
+	if (firstNote.href === "#notes/0") {
+		console.log("notes are links: passed")
+	} else {
+		throw new Error("notes are links: failed")
+	}
+}
+
 notesHaveIds();
 isTextCorrect();
 itDisplaysNotes();
