@@ -1,6 +1,5 @@
 function isTextCorrect() {
-	document.getElementById('app').value = "some text"
-	note = new Note();
+	note = new Note("some text");
 	if (note.getText() === "some text") {
 		console.log('is text correct: true')
 	} else {
@@ -9,12 +8,9 @@ function isTextCorrect() {
 }
 
 function itDisplaysNotes() {
-	note = {text: "something"};
-	noteListModel = new noteListModel();
-	noteListModel.addNote(note)
-	noteListModel.printList();
+	noteController.displayNotes();
 	list = document.getElementById('noteList');
-	if (list.innerHTML === "<li>something</li>") {
+	if (list.innerHTML === "<li>Favourite drink: seltzer</li>") {
 		console.log("it displays notes: true")
 	} else {
 		console.log("it displays notes: failed")
@@ -22,11 +18,9 @@ function itDisplaysNotes() {
 }
 
 function itDisplaysASingleNote() {
-	note = new Note();
-	note.text = "something"
+	note = new Note("something");
 	singleNote = new SingleNoteView(note);
 	singleNote.display();
-	console.log(document.getElementById('app').textContent);
 	if(document.getElementById('app').textContent === note.text ) {
 		console.log("it displays a single note: passed")
 	} else {
@@ -36,3 +30,4 @@ function itDisplaysASingleNote() {
 
 isTextCorrect();
 itDisplaysNotes();
+itDisplaysASingleNote();

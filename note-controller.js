@@ -1,6 +1,7 @@
 (function(exports) {
-	function NoteController() {
-		this.noteList = new NoteList();
+	function NoteController(noteList) {
+		this.noteList = noteList;
+		this.noteListView = new NoteListView(this.noteList);
 	}
 
 	NoteController.prototype.something = function(first_argument) {
@@ -9,7 +10,7 @@
 
 	NoteController.prototype.displayNotes = function() {
 		appDiv = document.getElementById('app');
-		appDiv.innerHTML = noteListView.notesString();
+		appDiv.innerHTML = this.noteListView.notesString();
 	}; 
 
 	exports.NoteController = NoteController;
