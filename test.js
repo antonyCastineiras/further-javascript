@@ -77,6 +77,19 @@ function clickingLinkDisplaysASingleNote() {
 	});
 }
 
+function createsANote() {
+	textBox = document.getElementById('text');
+	textBox.value = "here is some text";
+	submitButton = document.querySelector('#textForm input');
+	initialCount = noteController.noteList.notes.length;
+	submitButton.click();
+	if (noteController.noteList.notes.length > initialCount) {
+		console.log("creates a note: passed");
+	} else {
+		throw new Error("creates a note: failed");
+	}
+}
+
 notesHaveIds();
 isTextCorrect();
 itDisplaysNotes();
@@ -84,3 +97,4 @@ itDisplaysASingleNote();
 itAbbreviatesText();
 notesAreLinks();
 clickingLinkDisplaysASingleNote();
+createsANote();
