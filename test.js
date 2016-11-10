@@ -41,25 +41,24 @@ function itAbbreviatesText() {
 }
 
 function notesHaveIds() {
-	testNoteList = new NoteList();
-	note0 = new Note("This is note0");
-	testNoteList.addNote(note0);
-	note1 = new Note("This is note1");
-	testNoteList.addNote(note1);
+	note0 = new Note("This is note0 and it is longer than 20 characters");
+	noteController.noteList.addNote(note0);
+	note1 = new Note("This is note1 and it is a long note aswell");
+	noteController.noteList.addNote(note1);
 	if (note0.id() === 0) {
 		console.log("note0 has an id: passed");
 	} else {
-		throw new Error("note0 has an id: passed");
+		throw new Error("note0 has an id: failed");
 	}
 	if (note1.id() === 1) {
 		console.log("note1 has an id: passed");
 	} else {
-		throw new Error("note1 has an id: passed");
+		throw new Error("note1 has an id: failed");
 	}
 }
 
+notesHaveIds();
 isTextCorrect();
 itDisplaysNotes();
 itDisplaysASingleNote();
 itAbbreviatesText();
-notesHaveIds();
