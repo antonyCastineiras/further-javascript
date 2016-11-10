@@ -21,5 +21,18 @@ function itDisplaysNotes() {
 	}
 }
 
+function itDisplaysASingleNote() {
+	note = new Note();
+	note.text = "something"
+	singleNote = new SingleNoteView(note);
+	singleNote.display();
+	console.log(document.getElementById('app').textContent);
+	if(document.getElementById('app').textContent === note.text ) {
+		console.log("it displays a single note: passed")
+	} else {
+		throw new Error("it displays a single note: failed");
+	}
+}
+
 isTextCorrect();
 itDisplaysNotes();
