@@ -2,7 +2,8 @@
 (function(exports) {
 
 	function Note() {
-		this.text = document.getElementById('app').value;
+		this.id = noteController.noteList.notes.length;
+		this.text = document.getElementById('text').value;
 	}
 
 	Note.prototype.getText = function() {
