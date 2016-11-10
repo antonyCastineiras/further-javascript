@@ -22,8 +22,14 @@
 		}
 	});
 
+	form = document.getElementById('textForm');
+	form.addEventListener('submit', function(event) {
+		event.preventDefault();
+		console.log(event);
+	});
+
 	function getIdFromUrl() {
-		return window.location.hash.split("#")[1].split("/")[1]
+		return window.location.hash.split("/")[1]
 	}
 
 	exports.NoteController = NoteController;
