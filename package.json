@@ -1,7 +1,7 @@
 {
-  "name": "further-javascript",
+  "name": "notes-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "notes",
   "main": "note-list-model.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
