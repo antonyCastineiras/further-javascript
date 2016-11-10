@@ -59,10 +59,20 @@ function notesHaveIds() {
 
 function notesAreLinks() {
 	firstNote = document.querySelector('#noteList li a');
-	if (firstNote.href === "#notes/0") {
+	if (firstNote.href === "http://localhost:8080/#notes/0") {
 		console.log("notes are links: passed")
 	} else {
 		throw new Error("notes are links: failed")
+	}
+}
+
+function clickingLinkDisplaysASingleNote() {
+	document.querySelector('#noteList li a').click;
+	console.log(note0.getText());
+	if(document.getElementById('app').textContent === note0.getText() ) {
+		console.log("it displays a single note: passed")
+	} else {
+		throw new Error("it displays a single note: failed");
 	}
 }
 
@@ -71,3 +81,5 @@ isTextCorrect();
 itDisplaysNotes();
 itDisplaysASingleNote();
 itAbbreviatesText();
+notesAreLinks();
+clickingLinkDisplaysASingleNote();
