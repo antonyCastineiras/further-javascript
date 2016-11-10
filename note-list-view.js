@@ -8,7 +8,7 @@
 		notes = this.noteList.notes
 		list = '<ul id="noteList">'
 		for (i=0;i<notes.length;i++) {
-			list += '<li>' + notes[i].abbreviation() + '</li>'
+			list += '<li><a href="#notes/' + notes[i].id() + '">' + notes[i].abbreviation() + '</a></li>'
 		}
 		return list + '</ul>'
 	};
