@@ -67,13 +67,14 @@ function notesAreLinks() {
 }
 
 function clickingLinkDisplaysASingleNote() {
-	document.querySelector('#noteList li a').click;
-	console.log(note0.getText());
-	if(document.getElementById('app').textContent === note0.getText() ) {
-		console.log("it displays a single note: passed")
-	} else {
-		throw new Error("it displays a single note: failed");
-	}
+	document.querySelector('#noteList li a').click(function () {
+		if(document.getElementById('app').textContent == note0.getText() ) {
+			console.log("it displays a single note: passed")
+		} else {
+			console.log(document.getElementById('app').textContent);
+			throw new Error("it displays a single note: failed");
+		}
+	});
 }
 
 notesHaveIds();
